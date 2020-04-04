@@ -1,0 +1,13 @@
+SELECT *
+ FROM customers
+WHERE last_name REGEXP '[gim]e' 
+      -- ge
+	  -- ie
+      -- me
+      ----------------
+-- REGEXP
+      -- ^ beginning of the string
+      -- $ end of the string
+      -- | logical or
+      -- [amn] match any single characters in the bracket 
+      -- [a-f] range of characters
