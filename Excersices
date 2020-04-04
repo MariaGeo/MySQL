@@ -67,4 +67,25 @@ WHERE address LIKE '%TRAIL%' OR
  SELECT *
  FROM customers
  WHERE phone LIKE '%9'
+ ------------------------------------------------------------------------
+       -- Get the customer whose
+              -- first name are ELKA or AMBUR
+SELECT *
+FROM customers
+ WHERE first_name REGEXP 'Elka|Ambur' 
+ 
+              -- last name end with EY or ON
+SELECT *
+FROM customers
+ WHERE last_name REGEXP 'Ey$|On$'
+ 
+ 			-- last name start with MY or contains SE
+SELECT *
+FROM customers
+ WHERE last_name REGEXP '^my|se'
+ 
+                        -- last name contain B folow by R or U
+SELECT *
+FROM customers
+ WHERE last_name REGEXP 'b[ru]'
 			
