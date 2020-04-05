@@ -140,7 +140,7 @@ SELECT
       os.name AS status
 FROM orders o
 JOIN customers c 
-     ON o.customer_id = c. customer_id
+     ON o.customer_id = c. customer_id       // USING (customer_id)
 JOIN order_statuses os
      ON o.status = os.order_status_id
      ----------------------------------------
@@ -153,9 +153,9 @@ JOIN order_statuses os
      
  FROM payments p
 JOIN clients c 
-          ON p.client_id = c.client_id
+          ON p.client_id = c.client_id      // USING (client_id)
 JOIN invoices i
-          ON p.invoice_id = i.invoice_id
+          ON p.invoice_id = i.invoice_id    // USING (invoice_id)
 JOIN payment_methods pm
           ON p.payment_method = pm.payment_method_id
 -------------------------------------------------------------
@@ -166,7 +166,7 @@ SELECT
       oi.quantity      
 FROM products p 
 LEFT JOIN order_items oi
-     ON oi.product_id = p.product_id
+     ON oi.product_id = p.product_id      // USING (product_id)
      -------------------------------------------------------------------
          -- OUTER JOIN between Multuply Tables
 SELECT
@@ -192,4 +192,20 @@ SELECT
       
 FROM employees e
 LEFT JOIN employees m
+--------------------------------------------------------------------
+           -- The USING clause
+USE sql_invoicing;
+
+SELECT
+     p.date,
+     c.name AS client,
+     p.amount,
+     pm.name AS payment_method
+     
+FROM payments p
+JOIN clients c 
+      USING (client_id)
+JOIN payment_methods pm
+     ON p.payment_method = pm. payment_method_id
+     
       
