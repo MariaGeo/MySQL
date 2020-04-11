@@ -394,5 +394,12 @@ WHERE client_id = (
     3.Choose create-databases.sql and click open
     4.Go to execute button or CNTR+Shift+enter
     5.Go left to SHEMA and click on refresh button
+    
+    -----------------------------------------------------------
+    	-- Retrieve how many employees work on each position 
+	
+	SELECT Position, COUNT(*)      
+	FROM people_table
+	GROUP BY Position
      
       
