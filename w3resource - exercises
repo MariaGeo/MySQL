@@ -88,4 +88,15 @@ CREATE TABLE  IF NOT EXISTS job (
                                job_title varchar (20) NOT NULL DEFAULT ' ',
                                min_salary decimal (10,2) NOT NULL DEFAULT 8000,                              
                                max_salary decimal (10,2) DEFAULT NULL
-                               )
+			       )
+    ----------------------------------------------------------------------------------------
+    
+-- Write a SQL statement to create a table named countries1 
+-- including columns country_id, country_name and region_id 
+-- and make sure that the country_id column will be a key field which will not contain any duplicate data at the time of insertion.
+
+CREATE TABLE IF NOT EXISTS countries1 (
+				    country_id varchar (5) NOT NULL PRIMARY KEY,
+                                    country_name varchar (30) NOT NULL,
+                                    region_id decimal (6,0)
+                                    )
